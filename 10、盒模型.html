@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒模型</title>
+    <style>
+        /* border-style: none, solid, dotted（点线）, dashed（虚线）, double（双实线）
+           border-widht:
+           border-color:
+           简写 border: border-widht border-style border-color;
+        
+           上下外边距会进行合并，以大的外边距为准; 左右外边距不会合并；
+           body 有默认 8px 的外边距
+
+           行内元素不要给上下 边距，会被忽略，左右边距可以起作用。
+           编写网页时 会对标签默认边距 清零
+           html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,input,img {margin:0; padding:0;}
+        */
+        div{
+            height: 100px;
+            width: 100px;
+
+            border: 20px dotted purple;
+
+            background-color:gold;
+            padding: 100px;
+            margin: 0 auto; /*盒子横向居中*/
+
+        }
+
+        table{
+            border-color: bisque;
+            /*边框折叠*/
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是盒子
+    </div>
+
+    <table border="2">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+</html>

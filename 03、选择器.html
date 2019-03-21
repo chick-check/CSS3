@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 20px;
+        }
+        #id-test{
+            color: aqua;
+        }
+        li.class-test{
+            background-color: #fe45;
+        }
+        .ff{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h4>css选择器</h4>
+    <ul>
+        <li>通配符选择器：*</li>
+        <li>标签选择器：p / div / ul...</li>
+        <li id = "id-test">id选择器</li>
+        <li class="class-test ff">类选择器</li>
+        <li>后代选择器(所有子孙)：ul li</li>
+        <li>并集选择器：p,div</li>
+        <li>子元素选择器(仅到孩子节点)：div > p</li>
+        <!-- ~= 表示包含某个属性值，*= 表示属性值包含某些字母 -->
+        <li>属性选择器：span[class], span[class = "ff"], span[class~="ff"], span[class^="f"], span[class$="f"], span[class*="f"]</li>
+        <!--伪类选择器 应用于拥有键盘输入焦点的元素-->
+        <li>伪类选择器：:hover, :link, :active, :visited, :focus</li>
+        <li>伪元素选择器：::before , ::after, :first-child...</li>
+    </ul>
+</body>
+</html>

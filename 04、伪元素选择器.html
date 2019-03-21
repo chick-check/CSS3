@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       /* ::first-line  ::first-letter 只能用于块级元素。
+          ：before  :after 配合 content 可以设置元素 前后的内容
+       */
+        span:first-child{
+            color: red;
+        }
+        /*这里 : 也可以，是兼容的，新版本用 ::*/
+        p::first-letter{
+            font-size: 40px;
+        }
+        #tmp::before{
+            content: "---------";
+            display: block;
+        }
+        #tmp::after{
+            content: "#########"
+        }
+    </style>
+</head>
+<body>
+    <div id ="tmp">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+    <p>
+        <span>apple</span>
+        <span>banana</span>
+        <span>carrot</span>
+    </p>
+</body>
+</html>

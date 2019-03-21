@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*浮动脱离标准流，不占位置，但会影响标准流；
+          浮动只有左右浮动
+          元素浮动以后，如果没有设置高宽，元素会有行内块元素的特性，此时元素大小取决于内容多少
+          元素浮动后会破坏原来的正常流布局，造成内容塌陷*/
+        div{
+            border: 2px solid red;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float:right;
+        }
+
+    </style>
+</head>
+<body>
+    <div id ="f1">
+        hello world!!
+    </div>
+    <p>习近平赞赏巴科担任哈佛大学校长后首次出访就来到中国，称赞这体现了巴科校长对中美教育交流的重视。习近平指出，教育交流合作是中美关系的重要组成部分，有助于增进中美友好的民意基础。新中国成立70年来、特别是改革开放40年来，大批海外学成归国的人才为中国的发展建设作出了重要贡献。他山之石可以攻玉。我们主张互学互鉴，鼓励留学，支持中外教育交流合作，希望中美人文交流取得更多积极成果。我很高兴，去年底我同特朗普总统在阿根廷会晤时，他也表示支持中美教育交流合作。</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid plum;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color:greenyellow;
+            float: left; /*设置浮动，父盒子高度变成 2px,即边框宽度*/
+        }
+        .parent{
+            /*解决父容器塌陷的方法，这样可以使父容器具有包裹性，把子元素都包裹其中*/
+            overflow: hidden; /*visible（默认））, hidden , auto（超出显示滚动条，不超出不显示滚动条）, scroll（不管超不超出都显示滚动条）*/
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>

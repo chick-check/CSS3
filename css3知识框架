@@ -1,0 +1,180 @@
+/*CSS属性详情查看http://www.runoob.com/cssref/css3-pr-hanging-punctuation.html*/
+一、边框
+border-radius
+box-shadow
+border-image
+
+二、背景
+background-image
+    #example1 { 
+    background-image: url(img_flwr.gif), url(paper.gif); /*多个图像作为背景*/
+    background-position: right bottom, left top; 
+    background-repeat: no-repeat, repeat; 
+    }
+    或
+    #example1 {
+        background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+    }
+background-size
+    div
+    {
+        background:url(img_flwr.gif);
+        background-size:80px 60px; /*完全填充区域用 background-size:100% 100%*/
+        background-repeat:no-repeat;
+    }
+background-origin
+/*属性指定了背景图像的位置区域,content-box, padding-box,和 border-box区域内可以放置背景图像*/
+background-clip
+/*背景剪裁属性是从指定位置开始绘制,content-box, padding-box,和 border-box*/
+
+三、渐变
+/*rgba() 函数可以指定透明度，取值0-1，0表示完全透明*/
+linear-gradient 线性渐变（向下/向上/向左/向右/对角方向，默认从上到下)
+    语法：background: linear-gradient(direction, color-stop1, color-stop2, ...);
+         direction: to right 左->右
+                    to bottom right 左上角->右下角
+    语法：background: linear-gradient(angle, color-stop1, color-stop2);
+         angle: 0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。
+repeating-linear-gradient 用于重复线性渐变
+radial-gradient 径向渐变（由它们的中心定义)
+    语法：background: radial-gradient(center, shape size, start-color, ..., last-color);
+         shap: ellipse（默认，椭圆形）、circle
+         size: closest-side、farthest-side、closest-corner、farthest-corner（默认）
+repeating-radial-gradient
+
+四、文本效果
+text-shadow
+    h1
+    {
+        text-shadow: 5px 5px 5px #FF0000; /*分别是水平阴影，垂直阴影，模糊的距离，以及阴影的颜色*/
+    }
+box-shadow
+text-overflow
+    ellipsis溢出显示 ...
+    clip溢出直接截断
+word-wrap: break-word 一般用于英文单词被break
+word-break
+    keep-all 换行时长单词用-连接
+    break_all 长单词被break，直接换行，效果同 word-wrap:break-word
+
+五、字体
+/*使用 CSS3，网页设计师可以使用喜欢的任何字体，只需简单的将字体文件包含在网站中，它会自动下载给需要的用户*/
+<style> 
+@font-face
+{
+    font-family: myFirstFont;/*font-family,src是必须的*/
+    src: url(sansation_light.woff);
+    font-stretch:normal/condensed...;  /*如何拉伸字体*/
+    font-style:normal/italic/oblique;
+    font-weight:normal/bold/100...;/*定义字体支持的 UNICODE 字符范围。默认是 "U+0-10FFFF"*/
+    unicode-range:
+}
+</style>
+
+六、2D转换
+/*移动、缩放、转动、拉长或拉伸*/
+transform属性的方法：
+translate() //transform: translate(50px,100px);
+rotate()    //transform: rotate(30deg);正数表示顺时针旋转
+scale()     //transform: scale(2,3); 增加或减少的大小，宽度是原来的2倍，高度是原来的3倍
+skew()      //transform: skew(30deg,20deg);表示往X/Y轴的倾斜角度
+matrix()    //transform: matrix(0.866,0.5,-0.5,0.866,0,0);有六个参数，包含旋转，缩放，移动（平移）和倾斜功能。
+
+七、3D转换
+matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n) // 4x4 矩阵
+translate3d(x,y,z) //3D 转化
+    translateX(x)
+    translateY(y)
+    translateZ(z)
+scale3d(x,y,z)  //3D 缩放转换
+    scaleX(x)
+    scaleY(y)
+    scaleZ(z)
+rotate3d(x,y,z,angle) // 3D 旋转
+    rotateX(angle)
+    rotateY(angle)
+    rotateZ(angle)
+perspective(n) // 透视视图
+
+八、过渡
+要实现过渡，必须具备两个点
+1、指定要添加效果的CSS属性
+2、指定效果的持续时间
+例如：transition: width 2s, height 2s, transform 2s;
+transition有4个属性值: width 1s linear 2s; //属性的名称,过渡效果花费的时间,过渡效果的时间曲线(linear,默认ease),过渡效果何时开始;
+
+九、动画
+/*@keyframes规则是创建动画。 @keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。*/
+例子：
+div
+{
+	width:100px;
+	height:100px;
+	background:red;
+	animation:myfirst 5s; /*规定动画的名称、时长*/
+}
+
+@keyframes myfirst
+{
+	from {background:red;}
+	to {background:yellow;}
+}
+或
+@keyframes myfirst
+{
+	0% {background:red;}
+	100% {background:yellow;}
+}
+简写：animation: myfirst 5s linear 2s infinite alternate; //动画的名称，一个周期所花费的时间，速度曲线(默认ease)，延迟时间，播放的次数，是否在下一周期逆向地播放（默认normal）
+
+十、多列
+column-count  几列
+column-gap  列间距
+column-rule: 1px solid lightblue;
+    column-rule-style 列之间边框样式
+    column-rule-width 列之间边框厚度
+    column-rule-color 列之间边框颜色
+column-span 元素跨越多少列 all表示所有列
+column-width 列的宽度
+
+十一、图片
+图片文本
+http://www.runoob.com/try/try.php?filename=trycss_image_text_top_left
+卡片式图片
+图片滤镜 filter: blur(4px)/brightness(250%)/contrast(180%)/grayscale(100%)/hue-rotate(180deg)/invert(100%)/opacity(50%)/saturate(7)/sepia(100%)/drop-shadow(8px 8px 10px green);
+响应式图片相册
+图片 Modal(模态)
+十二、按钮
+十三、分页
+/*如果点击当前页，可以使用 .active 来设置当期页样式*/
+十四、框大小
+/*默认情况下：
+  width(宽) + padding(内边距) + border(边框) = 元素实际宽度
+  height(高) + padding(内边距) + border(边框) = 元素实际高度
+但CSS3 box-sizing: border-box; 属性在一个元素的 width 和 height 中包含 padding(内边距) 和 border(边框)。*/
+十五、弹性盒子
+/*CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。*/
+flex-direction: row | row-reverse | column | column-reverse  //指定弹性子元素在父容器中的位置
+justify-content: flex-start | flex-end | center | space-between | space-around  //内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。
+align-items: flex-start | flex-end | center | baseline | stretch  //设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式
+flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit    //指定弹性盒子的子元素换行方式。
+align-content: flex-start | flex-end | center | space-between | space-around | stretch //用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。
+/*弹性子元素属性*/
+排序  order: -1
+居中对齐  margin: auto
+纵轴上的对齐  align-self: auto | flex-start | flex-end | center | baseline | stretch
+分配空间  flex: auto | initial | none | inherit |  [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]
+十六、多媒体查询
+@media not|only mediatype and (expressions) {
+    CSS 代码...;
+}
+
+not: not是用来排除掉某些特定的设备的，比如 @media not print（非打印设备）。
+only: 用来定某种特别的媒体类型。对于支持Media Queries的移动设备来说，如果存在only关键字，移动设备的Web浏览器会忽略only关键字并直接根据后面的表达式应用样式文件。对于不支持Media Queries的设备但能够读取Media Type类型的Web浏览器，遇到only关键字时会忽略这个样式文件。
+all: 所有设备，这个应该经常看到。
+
+值：
+all	用于所有多媒体类型设备
+print	用于打印机
+screen	用于电脑屏幕，平板，智能手机等。
+speech	用于屏幕阅读器

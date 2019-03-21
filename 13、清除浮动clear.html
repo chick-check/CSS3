@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clear</title>
+    <!--浮动会影响原来的正常流布局,左右两个盒子浮动以后，页脚会上移-->
+    <style>
+        div{
+            border: 1px solid black;
+        }
+        .fl{
+            width: 100px;
+            height: 300px;
+            float: left;
+        }
+        .fr{
+            width: 150px;
+            height: 400px;
+            float: right;
+        }
+        .footer{
+            height: 20px;
+            clear:both;/*left 保证不会和左边的盒子重叠 right 不和右边的盒子重叠*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fl"></div>
+    <div class="fr"></div>
+    <div class="footer"></div>
+</body>
+</html>
