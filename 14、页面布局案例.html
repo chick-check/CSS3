@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>960px 宽的页面布局</title>
+    <style>
+        body,div,p{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .top{
+            width: 960px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        .left{
+            width: 200px;
+            height: 300px;
+            float: left;
+        }
+        .content{
+            width: 756px;
+            height: 500px;
+            float: left;
+        }
+        .main{
+            margin: 0 auto;
+            overflow: hidden; /*解决父容器塌陷*/
+            width: 960px;
+        }
+        .footer{
+            width: 960px;
+            height: 50px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">头部</div>
+    <div class="main">
+        <div class="left">侧边栏</div>
+        <div class="content">
+            <P>
+                内容区域
+            </P>
+        </div>
+    </div>
+    <div class="footer">底部</div>
+</body>
+</html>

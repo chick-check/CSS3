@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, div{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: right;
+        }
+        /*以下可以引起父容器包裹子元素*/
+        .clearfix::before, .clearfix::after{
+            content: " " ;/*兼容 opera浏览器bug*/
+            display:table;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom: 1; /*兼容IE6,7*/
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="box"></div>
+        作为前端，数据提交到后台之前，重要的数据要进行加密一下，虽然已经有 https 等技术，但是增加一道前端的加密还是相对更安全的。虽然，前端的加密很容破解，但是有总比没有强。
+    </div>
+</body>
+</html>

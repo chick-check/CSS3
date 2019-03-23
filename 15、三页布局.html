@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,div{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .left{
+            float: left;
+            width: 100px;
+            height: 300px;
+        }
+        .right{
+            float: right;
+            width: 100px;
+            height: 500px;
+        }
+        .center{
+            margin: 0 102px;
+        }
+        .footer{
+            clear: both; /* 清除浮动对页面流式布局的影响，.footer 展示在浮动元素的 下面*/
+        }
+    </style>
+</head>
+<body>
+    <div class="top">头部</div>
+    <div class="left">左边</div>
+    <div class="right">右边</div> <!--这里 .right必须在 .center 之前，不然会因为 .center 独占一行，导致 .right 下移，达不到想要的效果-->
+    <div class="center">中间</div>
+    <div class="footer">底部</div>
+</body>
+</html>
