@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣诞树</title>
+    <style>
+        body,div{
+            margin: 0;
+            padding: 0;
+        }
+        /*盒子高宽设置0 设置边框宽度*/
+        .box{
+            width: 0;
+            height: 0;
+            border: 100px solid;
+            border-color: transparent transparent  green transparent;/* transparent 设置边框透明*/
+            border-style: dashed dashed solid dashed; /*兼容ie6*/
+            margin: 0 auto;
+        }
+        .box2{
+            width: 0;
+            height: 0;
+            border: 150px solid;
+            border-color: transparent transparent  green transparent;/* transparent 设置边框透明*/
+            border-style: dashed dashed solid dashed; /*兼容ie6*/
+            margin: -200px auto;
+        }
+        .box22{
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: transparent transparent  green transparent;/* transparent 设置边框透明*/
+            border-style: dashed dashed solid dashed; /*兼容ie6*/
+            margin: -280px auto;
+        }
+        .box3{
+            width: 80px;
+            height: 100px;
+            background-color: brown;
+            margin: 280px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box22"></div>
+    <div class="box3"></div>
+</body>
+</html>

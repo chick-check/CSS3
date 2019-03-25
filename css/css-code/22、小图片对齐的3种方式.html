@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字前面的小图片对齐方式，现在都用字体，这三个方法可以了解下</title>
+    <style>
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 25px;
+        }
+        a{
+            list-style: none;
+            color: #333;
+            text-decoration: none;
+        }
+        li{
+            height: 100px;
+            line-height: 100px
+        }
+        /*
+        方法1：设置背景图
+        */
+        .bg{
+            background: url('./css/image/icon.jpg') no-repeat 0 35px;
+
+        }
+        .bg a{
+            margin-left: 40px;
+        }
+        /*
+        方法2：通过设置行内块元素
+        */
+        .ib> i{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url('./css/image/icon.jpg') no-repeat 0 3px;
+            vertical-align: middle;
+        }
+        /*
+        方法3 不推荐，使用浮动;设置浮动之后相当于一个行内块元素
+        */
+        .fl>i{
+            float: left;
+            width: 40px;
+            height: 100px;
+            background: url('./css/image/icon.jpg') no-repeat 0 36px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="bg"><a href="#">购物</a></li>
+        <li class="ib"><i></i><a href="#">购物</a></li>
+        <li class="fl"><i></i><a href="#">购物</a></li>
+    </ul>
+</body>
+</html>

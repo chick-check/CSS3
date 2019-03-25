@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        .main{
+            margin: 100px auto;
+        }
+        .main li{
+            list-style: none;
+            width: 200px;
+            height: 40px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .main li a{
+            display: inline-block;
+            text-decoration: none;
+            color: #ccc;
+            height: 40px;
+            width: 200px;
+            line-height: 40px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .main li a:hover{
+            background-color:#c3c3c3;
+            color: #fff;
+        }
+        .bubble::before, .bubble::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 60%;
+            top: -24px;
+            width: 0;
+            height: 0;
+            border: 12px solid red;
+            border-color: transparent transparent #ccc transparent; 
+            border-style: dashed dashed solid dashed;
+        }
+        .bubble::after{
+            left: 60%;
+            top: -23px;
+            width: 0;
+            height: 0;
+            border: 12px solid #fff;
+            border-color: transparent transparent #fff; 
+            border-style: dashed dashed solid;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="main">
+        <li class="bubble"><a href="#">标签1</a></li>
+        <li><a href="#">标签2</a></li>
+        <li><a href="#">标签3</a></li>
+        <li><a href="#">标签4</a></li>
+    </ul>
+    
+</body>
+</html>
